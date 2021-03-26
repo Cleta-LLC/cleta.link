@@ -1,21 +1,3 @@
-
-/*!
-
-=========================================================
-* Nuxt Argon Dashboard PRO - v1.3.0
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/nuxt-argon-dashboard-pro
-* Copyright 2019 Creative Tim (https://www.creative-tim.com)
-
-* Coded by www.creative-tim.com and www.binarcode.com
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-*/
-
 const pkg = require('./package')
 console.log('ENV', process.env.NODE_ENV)
 
@@ -35,7 +17,7 @@ module.exports = {
       { hid: 'description', name: 'description', content: 'Cleta Chainlink Hackathons participation involving NFT Marketplace Tools' }
     ],
     link: [
-      { rel: 'icon', type: 'image/png', href: 'favicon.ico' },
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700'},
       { rel: 'stylesheet', href: 'https://use.fontawesome.com/releases/v5.6.3/css/all.css', integrity: "sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/", crossorigin: "anonymous"}
     ]
@@ -58,6 +40,8 @@ module.exports = {
   ** Plugins to load before mounting the App
   */
   plugins: [
+    { src: '~/plugins/amplify.js', mode: 'client' },
+    { src: '~/plugins/logger.js' },
     '~/plugins/dashboard/dashboard-plugin',
     {src: '~/plugins/dashboard/full-calendar', ssr: false },
     {src: '~/plugins/dashboard/world-map', ssr: false },
@@ -72,7 +56,9 @@ module.exports = {
     '@nuxtjs/pwa',
     '@nuxt/components',
     '@nuxt/content',
-    'nuxt-i18n'
+    'nuxt-i18n',
+    '@nuxtjs/dotenv',
+    '@nuxtjs/robots'
   ],
   /*
   ** Axios module configuration
@@ -97,6 +83,10 @@ module.exports = {
     }
   },
 
+  robots: {
+    UserAgent: '*',
+    Disallow: '/',
+  },
   /*
   ** Build configuration
   */

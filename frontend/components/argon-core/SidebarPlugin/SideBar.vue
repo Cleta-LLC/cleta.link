@@ -6,7 +6,7 @@
     <div class="scrollbar-inner" ref="sidebarScrollArea">
       <div class="sidenav-header d-flex align-items-center">
         <a class="navbar-brand" href="#">
-          <img :src="logo" class="navbar-brand-img" alt="Sidebar logo">
+          <img src="~/assets/img/cleta_banner.png" class="navbar-brand-img" alt="Cleta Sidebar logo">
         </a>
         <div class="ml-auto">
           <!-- Sidenav toggler -->
@@ -50,17 +50,17 @@ export default {
   props: {
     title: {
       type: String,
-      default: 'Creative Tim',
+      default: 'Cleta NFT Marketplace',
       description: 'Sidebar title'
     },
     shortTitle: {
       type: String,
-      default: 'CT',
+      default: 'CLETA',
       description: 'Sidebar short title'
     },
     logo: {
       type: String,
-      default: 'https://demos.creative-tim.com/nuxt-argon-dashboard-pro/img/brand/green.png',
+      default: '~/static/img/brand/green.png',
       description: 'Sidebar app logo'
     },
     backgroundColor: {
