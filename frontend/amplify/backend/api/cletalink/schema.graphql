@@ -1,0 +1,43 @@
+type SimpleExperienceCoin @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  name: String!
+  description: String
+  value: Float!
+  rng: Boolean!
+}
+
+type SimpleStats @model @auth(rules: [{allow: public}]) @key(name: "bySimpleNFT", fields: ["simplenftID"]) {
+  id: ID!
+  name: String!
+  descriptio: String!
+  value: Float!
+  simplenftID: ID
+}
+
+type SimpleProperties @model @auth(rules: [{allow: public}]) @key(name: "bySimpleNFT", fields: ["simplenftID"]) {
+  id: ID!
+  name: String!
+  description: String!
+  value: String!
+  simplenftID: ID
+}
+
+type SimpleNFT @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  ownerId: String!
+  externalLink: String
+  name: String!
+  SimpleProperties: [SimpleProperties] @connection(keyName: "bySimpleNFT", fields: ["id"])
+  SimpleStats: [SimpleStats] @connection(keyName: "bySimpleNFT", fields: ["id"])
+  descriptio: String
+  supply: Int!
+}
+
+type Post @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  postOwnerId: String!
+  postOwnerUsername: String!
+  postTitle: String!
+  postBody: String!
+}
+ 

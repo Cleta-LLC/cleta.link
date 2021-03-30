@@ -1,0 +1,20 @@
+{
+  "staging": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-cletalink-staging-202709-authRole",
+      "UnauthRoleArn": "arn:aws:iam::881970424006:role/amplify-cletalink-staging-202709-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::881970424006:role/amplify-cletalink-staging-202709-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-cletalink-staging-202709-deployment",
+      "UnauthRoleName": "amplify-cletalink-staging-202709-unauthRole",
+      "StackName": "amplify-cletalink-staging-202709",
+      "StackId": "arn:aws:cloudformation:us-east-1:881970424006:stack/amplify-cletalink-staging-202709/7affc350-88f1-11eb-afe1-1210b749d873",
+      "AmplifyAppId": "d1up0g7njm5tdq"
+    },
+    "categories": {
+      "auth": {
+        "cletalink": {}
+      }
+    }
+  }
+}

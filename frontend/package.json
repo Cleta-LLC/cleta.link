@@ -1,8 +1,8 @@
 {
   "name": "cleta-chainlink-nft",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Cleta Chainlink NFT tools",
-  "author": "Cleta",
+  "author": "Cleta LLC",
   "private": true,
   "scripts": {
     "dev": "nuxt",
@@ -11,7 +11,6 @@
     "generate": "nuxt generate"
   },
   "dependencies": {
-    "@aws-amplify/ui-components": "^1.1.1",
     "@aws-amplify/ui-vue": "^1.0.6",
     "@fullcalendar/core": "5.5.1",
     "@fullcalendar/daygrid": "5.5.0",
@@ -25,6 +24,7 @@
     "@nuxtjs/pwa": "3.3.5",
     "@nuxtjs/robots": "^2.5.0",
     "aws-amplify": "^3.3.26",
+    "aws-amplify-vue": "^2.1.5",
     "bootstrap": "4.3.1",
     "chart.js": "2.9.4",
     "d3": "6.5.0",
