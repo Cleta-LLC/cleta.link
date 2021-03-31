@@ -96,6 +96,7 @@
               >Mint a NFT</base-button
             >
             <amplify-s3-album />
+            <amplify-s3-image-picker />
           </card>
           <edit-profile-form></edit-profile-form>
         </div>
