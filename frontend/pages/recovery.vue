@@ -66,4 +66,15 @@ export default {
 }
 </script>
 
-<style></style>
+<style>
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+:root {
+  --amplify-primary-color: #4287f5;
+  --amplify-primary-tint: #005cf0;
+  --amplify-primary-shade: #005cf0;
+}
+</style>
