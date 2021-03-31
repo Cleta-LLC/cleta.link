@@ -85,6 +85,18 @@
               </card>
             </div>
           </div>
+          <card>
+            <!-- Card header -->
+            <h5 slot="header" class="h3 mb-0">Create your first NFT</h5>
+            <!-- Card body -->
+            <p class="card-text mb-4">
+              Mint a unique piece of content in a digital format
+            </p>
+            <base-button to="/mint" type="primary" class="btn btn-primary"
+              >Mint a NFT</base-button
+            >
+            <amplify-s3-album />
+          </card>
           <edit-profile-form></edit-profile-form>
         </div>
       </div>
@@ -98,12 +110,14 @@ import ProgressTrackList from '~/components/widgets/ProgressTrackList.vue'
 
 export default {
   layout: 'DashboardLayout',
-  middleware: 'auth',
   components: {
     EditProfileForm,
     UserCard,
     ProgressTrackList
-  }
+  },
+  data: () => ({
+    username: ''
+  })
 }
 </script>
 <style>
