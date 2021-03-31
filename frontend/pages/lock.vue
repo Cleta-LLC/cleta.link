@@ -13,8 +13,18 @@
         </div>
       </div>
       <div class="separator separator-bottom separator-skew zindex-100">
-        <svg x="0" y="0" viewBox="0 0 2560 100" preserveAspectRatio="none" version="1.1" xmlns="http://www.w3.org/2000/svg">
-          <polygon class="fill-default" points="2560 0 2560 100 0 100"></polygon>
+        <svg
+          x="0"
+          y="0"
+          viewBox="0 0 2560 100"
+          preserveAspectRatio="none"
+          version="1.1"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <polygon
+            class="fill-default"
+            points="2560 0 2560 100 0 100"
+          ></polygon>
         </svg>
       </div>
     </div>
@@ -26,7 +36,10 @@
             <div class="row justify-content-center">
               <div class="col-lg-3 order-lg-2">
                 <div class="card-profile-image">
-                  <img src="~/static/img/theme/team-4.jpg" class="rounded-circle border-secondary">
+                  <img
+                    src="~/static/img/theme/team-4.jpg"
+                    class="rounded-circle border-secondary"
+                  />
                 </div>
               </div>
             </div>
@@ -35,13 +48,13 @@
                 <h3>Jessica Jones</h3>
               </div>
               <form role="form">
-                <base-input alternative
-                            prepend-icon="ni ni-lock-circle-open"
-                            type="password"
-                            placeholder="Password"
-                            v-model="model.password"
+                <base-input
+                  alternative
+                  prepend-icon="ni ni-lock-circle-open"
+                  type="password"
+                  placeholder="Password"
+                  v-model="model.password"
                 >
-
                 </base-input>
                 <div class="text-center">
                   <base-button type="primary" class="mt-2">Unlock</base-button>
@@ -52,12 +65,12 @@
         </div>
       </div>
     </div>
-
   </div>
 </template>
 <script>
 export default {
   layout: 'AuthLayout',
+  middleware: 'dev',
   name: 'lock',
   data() {
     return {
@@ -66,6 +79,6 @@ export default {
       }
     }
   }
-};
+}
 </script>
 <style></style>
