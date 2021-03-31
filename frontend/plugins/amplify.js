@@ -1,5 +1,3 @@
-// import { createApp } from 'vue'
-// import App from './App.vue'
 import {
   applyPolyfills,
   defineCustomElements
@@ -15,6 +13,8 @@ applyPolyfills().then(() => {
   defineCustomElements(window)
 })
 
+// import { createApp } from 'vue'
+// import App from './App.vue'
 // const app = createApp(App)
 // app.config.isCustomElement = tag => tag.startsWith('amplify-')
 // app.mount('#app')
