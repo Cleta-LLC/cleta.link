@@ -16,5 +16,23 @@
         "cletalink": {}
       }
     }
+  },
+  "main": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-cletalink-main-103207-authRole",
+      "UnauthRoleArn": "arn:aws:iam::881970424006:role/amplify-cletalink-main-103207-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::881970424006:role/amplify-cletalink-main-103207-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-cletalink-main-103207-deployment",
+      "UnauthRoleName": "amplify-cletalink-main-103207-unauthRole",
+      "StackName": "amplify-cletalink-main-103207",
+      "StackId": "arn:aws:cloudformation:us-east-1:881970424006:stack/amplify-cletalink-main-103207/dfb4be00-922d-11eb-9a8f-0af49fb39b33",
+      "AmplifyAppId": "d1d77j81a7c42"
+    },
+    "categories": {
+      "auth": {
+        "cletalink": {}
+      }
+    }
   }
 }
