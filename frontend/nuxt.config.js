@@ -2,8 +2,6 @@ const pkg = require('./package')
 console.log('ENV', process.env.NODE_ENV)
 
 module.exports = {
-  buildDir: 'build',
-
   router: {
     base: '/',
     linkExactActiveClass: 'active'
