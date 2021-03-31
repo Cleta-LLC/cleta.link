@@ -23,10 +23,14 @@ export const actions = {
     }
   },
 
-  async register(_, { email, password }) {
+  async register(_, { email, password, name }) {
     const user = await Auth.signUp({
-      username: email,
-      password
+      username: email, // email is the same as username lol
+      password,
+      attributes: {
+        email,
+        name
+      }
     })
     return user
   },

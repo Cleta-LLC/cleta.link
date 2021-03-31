@@ -6,10 +6,17 @@
         <div class="header-body text-center mb-7">
           <div class="row justify-content-center">
             <div class="col-xl-5 col-lg-6 col-md-8 px-5">
-              <h1 class="text-white">Create an account</h1>
-              <p class="text-lead text-white">
-                Use these awesome forms to login or create new account in your
-                project for free.
+              <NuxtLink to="/">
+                <img
+                  height="60px"
+                  contain
+                  alt="cleta banner logo"
+                  src="/cleta_banner_638x224.png"
+                /><img />
+              </NuxtLink>
+              <h1 class="text-lead py-2">Create an account</h1>
+              <p class="text-lead py-2">
+                Create new account for free for early access.
               </p>
             </div>
           </div>
@@ -30,15 +37,6 @@
           ></polygon>
         </svg>
       </div>
-
-      <div v-if="error">
-        <base-alert dismissible type="danger" icon="ni ni-like-2">
-          {{ error }}
-          <NuxtLink to="/login">
-            Sign In Here
-          </NuxtLink>
-        </base-alert>
-      </div>
     </div>
 
     <!-- Page content -->
@@ -48,118 +46,177 @@
         <div class="col-lg-6 col-md-8">
           <div class="card bg-secondary border-0">
             <div class="card-header bg-transparent pb-5">
+              <base-alert
+                dismissible
+                type="warning"
+                icon="fas fa-exclamation-circle"
+                v-if="
+                  error &&
+                    error !== 'An account with the given email already exists.'
+                "
+              >
+                <strong>
+                  {{ error.split(':')[1] }}
+                </strong>
+              </base-alert>
+
+              <base-alert
+                dismissible
+                type="danger"
+                icon="fas fa-lock"
+                v-if="error"
+              >
+                <strong>
+                  {{ error }}
+                </strong>
+                <NuxtLink to="/login"> Login to your account</NuxtLink>
+              </base-alert>
+
               <div class="text-muted text-center mt-2 mb-4">
                 <small>Sign up with</small>
               </div>
               <div class="text-center">
-                <a href="#" class="btn btn-neutral btn-icon mr-4">
-                  <span class="btn-inner--icon"
-                    ><img src="~/static/img/icons/common/github.svg"
-                  /></span>
-                  <span class="btn-inner--text">Github</span>
-                </a>
                 <a href="#" class="btn btn-neutral btn-icon">
                   <span class="btn-inner--icon"
                     ><img src="~/static/img/icons/common/google.svg"
                   /></span>
-                  <span class="btn-inner--text">Google</span>
+                  <span class="btn-inner--text">Facebook</span>
                 </a>
               </div>
             </div>
+
             <div class="card-body px-lg-5 py-lg-5">
-              <!-- Unauthenticated -->
-
-              <!-- <div v-if="!$auth.isAuthenticated"> -->
-              <div class="text-center text-muted mb-4">
-                <small>Or sign up with credentials</small>
-              </div>
-              <validation-observer
-                v-slot="{ handleSubmit }"
-                ref="formValidator"
-              >
-                <!-- Register -->
-                <form
-                  role="form"
-                  v-if="step === steps.register"
-                  @submit.prevent="handleSubmit(register)"
+              <div v-if="!$auth.isAuthenticated">
+                <div class="text-center text-muted mb-4">
+                  <small>Or sign up with your email</small>
+                </div>
+                <validation-observer
+                  v-slot="{ handleSubmit }"
+                  ref="formValidator"
                 >
-                  <base-input
-                    alternative
-                    class="mb-3"
-                    prepend-icon="ni ni-email-83"
-                    placeholder="Email"
-                    name="Email"
-                    :rules="{ required: true, email: true }"
-                    v-model="model.email"
+                  <!-- Register -->
+                  <form
+                    role="form"
+                    v-if="step === steps.register"
+                    @submit.prevent="handleSubmit(register)"
                   >
-                  </base-input>
-                  <base-input
-                    alternative
-                    class="mb-3"
-                    prepend-icon="ni ni-lock-circle-open"
-                    placeholder="password"
-                    type="password"
-                    name="Password"
-                    :rules="{ required: true, min: 6 }"
-                    v-model="model.password"
-                  >
-                  </base-input>
-                  <!-- <div class="text-muted font-italic">
-                    <small
-                      >password strength:
-                      <span class="text-success font-weight-700"
-                        >strong</span
-                      ></small
+                    <base-input
+                      alternative
+                      class="mb-3"
+                      prepend-icon="fas fa-user"
+                      placeholder="Name or Artistic Name"
+                      name="username"
+                      :rules="{ required: true }"
+                      v-model="model.username"
                     >
-                  </div> -->
-                  <div class="row my-4">
-                    <div class="col-12">
-                      <base-input
-                        :rules="{ required: { allowFalse: false } }"
-                        name="Privacy"
-                        Policy
-                      >
-                        <base-checkbox v-model="model.agree">
-                          <span class="text-muted"
-                            >I agree with the
-                            <a href="https://cleta.io/privacy"
-                              >Privacy Policy</a
-                            ></span
-                          >
-                        </base-checkbox>
-                      </base-input>
+                    </base-input>
+                    <!-- <base-input
+                    alternative
+                    class="mb-3"
+                    prepend-icon="fas fa-phone"
+                    placeholder="Phone"
+                    name="Phone"
+                    :rules="{ required: true, phone: true }"
+                    v-model="model.phone_number"
+                  >
+                  </base-input> -->
+                    <base-input
+                      alternative
+                      class="mb-3"
+                      prepend-icon="ni ni-email-83"
+                      placeholder="Email"
+                      name="Email"
+                      :rules="{ required: true, email: true }"
+                      v-model="model.email"
+                    >
+                    </base-input>
+                    <base-input
+                      alternative
+                      class="mb-3"
+                      prepend-icon="ni ni-lock-circle-open"
+                      placeholder="password"
+                      type="password"
+                      name="Password"
+                      :rules="{ required: true, min: 10 }"
+                      v-model="model.password"
+                    >
+                    </base-input>
+                    <div class="row my-4">
+                      <div class="col-12">
+                        <base-input
+                          :rules="{ required: { allowFalse: false } }"
+                          name="Privacy"
+                          Policy
+                        >
+                          <base-checkbox v-model="model.agree">
+                            <span class="text-muted"
+                              >I agree with the
+                              <a href="https://cleta.io/privacy"
+                                >Privacy Policy</a
+                              ></span
+                            >
+                          </base-checkbox>
+                        </base-input>
+                      </div>
                     </div>
-                  </div>
-                  <div class="text-center">
-                    <button
-                      type="submit"
-                      @onclick="register"
-                      class="btn btn-primary mt-4"
+                    <div class="text-center">
+                      <button
+                        type="submit"
+                        @onclick="register"
+                        class="btn btn-success mt-4"
+                      >
+                        Create account
+                      </button>
+                    </div>
+                  </form>
+                  <!-- Confirm Registration -->
+                  <form v-else @submit.prevent="handleSubmit(confirm)">
+                    <div class="text-center text-muted mb-4">
+                      <small>Confirm the code sent to your mail</small>
+                    </div>
+                    <base-input
+                      alternative
+                      class="mb-3"
+                      prepend-icon="ni ni-email-83"
+                      :placeholder="confirmForm.email"
+                      name="Email"
+                      :rules="{ required: true, email: true }"
+                      v-model="confirmForm.email"
                     >
-                      Create account
-                    </button>
-                  </div>
-                </form>
-
-                <!-- Confirm Registration -->
-                <form v-else @submit.prevent="handleSubmit(register)">
-                  <!-- @submit.prevent="confirm"> -->
-                  <input
-                    v-model="confirmForm.email"
-                    type="email"
-                    placeholder="Email"
-                    class="form-control"
-                  />
-                  <input
-                    v-model="confirmForm.code"
-                    placeholder="Code"
-                    class="form-control"
-                  />
-                  <button type="submit" class="button--green">Confirm</button>
-                </form>
-              </validation-observer>
+                    </base-input>
+                    <base-input
+                      alternative
+                      class="mb-3"
+                      prepend-icon="fas fa-code"
+                      placeholder="Recovery Code"
+                      name="code"
+                      :rules="{ required: true }"
+                      v-model="confirmForm.code"
+                    >
+                    </base-input>
+                    <div class="text-center">
+                      <button
+                        type="submit"
+                        @onclick="confirm"
+                        class="btn btn-success mt-4"
+                      >
+                        Confirm
+                      </button>
+                    </div>
+                  </form>
+                </validation-observer>
+              </div>
+              <!-- Authenticated -->
+              <div v-else>
+                You're logged in as {{ $auth.email }}.
+                <button
+                  @click="$store.dispatch('auth/logout')"
+                  class="button--green"
+                >
+                  Logout
+                </button>
+              </div>
             </div>
-            <!-- Authenticated -->
           </div>
         </div>
       </div>
@@ -182,9 +239,9 @@ export default {
       code: ''
     },
     model: {
-      name: '',
       email: '',
       password: '',
+      name: '',
       agree: false
     },
     error: ''
@@ -203,7 +260,7 @@ export default {
     async confirm() {
       try {
         await this.$store.dispatch('auth/confirmRegistration', this.confirmForm)
-        await this.$store.dispatch('auth/login', this.registerForm)
+        await this.$store.dispatch('auth/login', this.model)
         this.$router.push('/')
       } catch (error) {
         console.log({ error })

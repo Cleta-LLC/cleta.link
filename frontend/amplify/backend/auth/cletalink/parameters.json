@@ -1,7 +1,7 @@
 {
     "identityPoolName": "testAuthIdentityPool",
     "allowUnauthenticatedIdentities": false,
-    "resourceNameTruncated": "cletal22d5298b",
+    "resourceNameTruncated": "cletal78aebbc7",
     "userPoolName": "cletalink",
     "autoVerifiedAttributes": [
         "email"
@@ -25,16 +25,15 @@
     ],
     "requiredAttributes": [
         "email",
-        "phone_number",
         "name"
     ],
     "userpoolClientGenerateSecret": false,
     "userpoolClientRefreshTokenValidity": 30,
     "userpoolClientWriteAttributes": [],
     "userpoolClientReadAttributes": [],
-    "userpoolClientLambdaRole": "cletal22d5298b_userpoolclient_lambda_role",
+    "userpoolClientLambdaRole": "cletal78aebbc7_userpoolclient_lambda_role",
     "userpoolClientSetAttributes": false,
-    "sharedId": "22d5298b",
+    "sharedId": "78aebbc7",
     "resourceName": "cletalink",
     "authSelections": "identityPoolAndUserPool",
     "authRoleArn": {
@@ -59,6 +58,13 @@
     "adminQueries": false,
     "thirdPartyAuth": false,
     "authProviders": [],
+    "hostedUI": true,
+    "hostedUIDomainName": "d28nf5wx2hdv",
+    "authProvidersUserPool": [
+        "Facebook"
+    ],
+    "hostedUIProviderMeta": "[{\"ProviderName\":\"Facebook\",\"authorize_scopes\":\"email,public_profile\",\"AttributeMapping\":{\"email\":\"email\",\"name\":\"name\",\"username\":\"id\"}}]",
+    "oAuthMetadata": "{\"AllowedOAuthFlows\":[\"code\"],\"AllowedOAuthScopes\":[\"phone\",\"email\",\"openid\",\"profile\",\"aws.cognito.signin.user.admin\"],\"CallbackURLs\":[\"https://cleta.io/\"],\"LogoutURLs\":[\"https://cleta.io/\"]}",
     "usernameCaseSensitive": false,
     "dependsOn": []
 }
