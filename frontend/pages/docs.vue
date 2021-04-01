@@ -4,7 +4,7 @@
       <div class="col ">
         <iframe
           class="clickup-embed clickup-dynamic-height"
-          src="https://doc.clickup.com/p/88hjt-210/cleta-privacy-policy"
+          src="https://doc.clickup.com/d/h/88hjt-1274/4bad18965f66eaa"
           onwheel=""
           width="100%"
           height="100%"

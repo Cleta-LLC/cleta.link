@@ -4,7 +4,7 @@
       <div class="col ">
         <iframe
           class="clickup-embed clickup-dynamic-height"
-          src="https://doc.clickup.com/p/88hjt-210/cleta-privacy-policy"
+          src="https://doc.clickup.com/p/h/88hjt-273/e01c83ff674e08d"
           onwheel=""
           width="100%"
           height="100%"
@@ -13,6 +13,7 @@
     </div>
   </div>
 </template>
+
 <script>
 export default {
   layout: 'Simple'

@@ -69,7 +69,7 @@
                 </base-alert>
               </div>
 
-              <div class="text-muted text-center mt-2 mb-3">
+              <!-- <div class="text-muted text-center mt-2 mb-3">
                 <small>Sign in with</small>
               </div>
               <div class="btn-wrapper text-center">
@@ -79,11 +79,11 @@
                   /></span>
                   <span class="btn-inner--text">Facebook</span>
                 </a>
-              </div>
+              </div>  -->
             </div>
             <div class="card-body px-lg-5 py-lg-5">
               <div class="text-center text-muted mb-4">
-                <small>Or sign in with credentials</small>
+                <small>Sign in with email credentials</small>
               </div>
               <validation-observer
                 v-slot="{ handleSubmit }"

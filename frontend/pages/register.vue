@@ -151,7 +151,7 @@
                           <base-checkbox v-model="model.agree">
                             <span class="text-muted"
                               >I agree with the
-                              <a href="https://cleta.io/privacy"
+                              <a href="https://cleta.link/privacy"
                                 >Privacy Policy</a
                               ></span
                             >
