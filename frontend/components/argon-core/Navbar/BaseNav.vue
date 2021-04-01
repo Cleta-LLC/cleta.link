@@ -22,13 +22,14 @@
         <span class="navbar-toggler-icon"></span>
       </button>
 
-        <div
-          class="navbar-collapse navbar-custom-collapse collapse show"
-          :class="menuClasses"
-          v-show="show"
-          v-click-outside="closeMenu">
-          <slot :close-menu="closeMenu"></slot>
-        </div>
+      <div
+        class="navbar-collapse navbar-custom-collapse collapse show"
+        :class="menuClasses"
+        v-show="show"
+        v-click-outside="closeMenu"
+      >
+        <slot :close-menu="closeMenu"></slot>
+      </div>
     </div>
   </nav>
 </template>
@@ -78,8 +79,9 @@ export default {
           'primary',
           'light',
           'info',
+          'orange',
           'vue'
-        ].includes(value);
+        ].includes(value)
       },
       description: 'Navbar color type'
     }
@@ -90,31 +92,31 @@ export default {
   },
   computed: {
     classes() {
-      let color = `bg-${this.type}`;
+      let color = `bg-${this.type}`
       let classes = [
         { 'navbar-transparent': this.transparent },
         { [`navbar-expand-${this.expand}`]: this.expand }
-      ];
+      ]
       if (this.position) {
-        classes.push(`navbar-${this.position}`);
+        classes.push(`navbar-${this.position}`)
       }
       if (!this.transparent) {
-        classes.push(color);
+        classes.push(color)
       }
-      return classes;
+      return classes
     },
     hasMenu() {
-      return this.$slots.default;
+      return this.$slots.default
     }
   },
   methods: {
     toggleMenu() {
-      this.$emit('change', !this.show);
+      this.$emit('change', !this.show)
     },
     closeMenu() {
-      this.$emit('change', false);
+      this.$emit('change', false)
     }
   }
-};
+}
 </script>
 <style></style>

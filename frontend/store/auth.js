@@ -1,6 +1,6 @@
 import { Auth } from 'aws-amplify'
-// import awsconfig from '../src/aws-exports'
-// Auth.configure(awsconfig)
+import awsconfig from '../src/aws-exports'
+Auth.configure(awsconfig)
 
 export const state = () => ({
   isAuthenticated: false,
