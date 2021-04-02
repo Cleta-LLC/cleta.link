@@ -11,7 +11,8 @@
       <div @click="$sidebar.displaySidebar(false)">
         <nuxt></nuxt>
       </div>
-      <content-footer v-if="!$route.meta.hideFooter"></content-footer>
+
+      <CletaFooter></CletaFooter>
     </div>
   </div>
 </template>
@@ -35,19 +36,17 @@ function initScrollbar(className) {
   }
 }
 
-import DashboardNavbar from '~/components/layouts/argon/DashboardNavbar.vue'
-import ContentFooter from '~/components/layouts/argon/ContentFooter.vue'
 import DashboardContent from '~/components/layouts/argon/Content.vue'
 import CletaNavbar from '~/components/cleta/CletaNavbar.vue'
 import CletaSidebar from '~/components/cleta/CletaSidebar.vue'
+import CletaFooter from '~/components/cleta/CletaFooter.vue'
 
 export default {
   components: {
-    DashboardNavbar,
-    ContentFooter,
     DashboardContent,
     CletaNavbar,
-    CletaSidebar
+    CletaSidebar,
+    CletaFooter
   },
   methods: {
     initScrollbar() {

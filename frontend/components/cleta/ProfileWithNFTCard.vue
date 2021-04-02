@@ -26,6 +26,9 @@
     <div class="card-body pt-0">
       <div class="row">
         <div class="col">
+          <div class="d-flex justify-content-center">
+            <h6 class="h2 text-black mb-0">{{ username }}</h6>
+          </div>
           <div class="card-profile-stats d-flex justify-content-center">
             <div>
               <span class="heading">22</span>
@@ -55,6 +58,11 @@
   </div>
 </template>
 <script>
-export default {}
+export default {
+  data: () => ({
+    username: "You shoudn't be here: FLAG001 - ${TOO-EASY-TOO-FAST}"
+  }),
+  computed: {}
+}
 </script>
 <style></style>
