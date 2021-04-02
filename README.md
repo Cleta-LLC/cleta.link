@@ -1,11 +1,10 @@
-# Cleta.link Chainlink Hackathon  
+# [Cleta.link](https://cleta.link) Chainlink Hackathon  
 
-## Please visit our rich text [Roadmap](https://doc.clickup.com/p/h/88hjt-133/038c0fd2d229bb3)
-Track realeases and interact with developers [here](https://doc.clickup.com/p/h/88hjt-133/038c0fd2d229bb3)
+* Please see our [Docs](https://cleta.link/docs)
 
 ## Frontend
 ### Nuxt
-To span a development server using `yarn`:
+To create a development server using `yarn`:
 ```bash
 $ cd frontend/ && yarn install && yarn dev
 ```
